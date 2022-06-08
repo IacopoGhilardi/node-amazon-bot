@@ -1,8 +1,9 @@
 // const { chromium } = require('playwright');
 // require('dotenv').config()
-const express = require('express')
+// import express from 'express';
+var express = require('express');
 const app = express()
-require('./routes/amazon')(app);
+require('./routes/amazon.js')(app);
 
 const PORT = 5000
 

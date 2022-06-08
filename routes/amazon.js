@@ -1,3 +1,5 @@
+const amazonLogin = require('../amazon/login');
+
 module.exports = function(app){
 
     app.get('/', function(req, res){
@@ -5,6 +7,7 @@ module.exports = function(app){
     });
 
     app.get('/amazon/login', function(req, res){
+        amazonLogin('iacopo.ghila@gmail.com', 'prova');
         res.send('login');
     });
 }
