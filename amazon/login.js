@@ -3,7 +3,11 @@
 const { chromium } = require('playwright');
 
 module.exports = function(username, password) {
-  (async () => {
+
+  console.log('provaaaaa', {username, password});
+
+  // (async () => {
+
     const browser = await chromium.launch({ headless: false, slowMo: 50 });
     const page = await browser.newPage();
 
@@ -24,6 +28,6 @@ module.exports = function(username, password) {
     await expect(page).toHaveURL('https://www.amazon.it/ap/signin');
     // Fill input[name="password"]
     await page.locator('input[name="password"]').fill(`${password}`);
-  })
+  // })
 
 }
