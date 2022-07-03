@@ -1,4 +1,5 @@
 const amazonLogin = require('../amazon/login');
+const { chromium } = require('playwright');
 
 module.exports = function(app){
 
@@ -6,8 +7,9 @@ module.exports = function(app){
         res.send('home');
     });
 
-    app.get('/amazon/login', function(req, res){
-        amazonLogin('iacopo.ghila@gmail.com', 'prova');
-        res.send('ciao');
+    app.get('/amazon/login', async (req, res) => {
+        const response = amazonLogin('iacopo.ghila@gmail.com', 'ciao!');
+
+        console.log('response', response);
     });
 }
